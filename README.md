@@ -27,6 +27,9 @@ The algorithm replaces words in an input string according to the following rules
 ```text
 AkvelonSolution/
 │
+├── .github/workflows/
+│   └── ci.yml                     # GitHub Actions CI workflow (Build & Test)
+│
 ├── Akvelon/                       # Main Console Application
 │   ├── FizzBuzzDetector.cs        # Core detection and replacement logic
 │   ├── FizzBuzzResult.cs          # Result model (OutputString & Count)
@@ -128,6 +131,16 @@ For verbose output:
 ```bash
 dotnet test --verbosity normal
 ```
+
+---
+
+## Continuous Integration (CI)
+
+A GitHub Actions workflow is configured in `.github/workflows/ci.yml` to automatically validate changes on every `push` and `pull_request`:
+- Sets up .NET SDK 10.0.x
+- Restores dependencies (`dotnet restore`)
+- Builds the solution in Release configuration (`dotnet build --configuration Release --no-restore`)
+- Executes all unit tests (`dotnet test --configuration Release --no-build --verbosity normal`)
 
 ---
 
