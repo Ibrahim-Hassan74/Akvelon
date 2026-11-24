@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Akvelon/Akvelon.csproj" />
+  <Project Path="Akvelon.Tests/Akvelon.Tests.csproj" />
+</Solution>
